@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     private EnemyManager enemyManager;
 
+
     private void Awake()
     {
         Instance = this;
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     void StartNextWave()
     {
-        currentWaveIndex = 0;
+        currentWaveIndex += 1;
         enemyManager.StartWave(1 + currentWaveIndex / 5);
     }
 

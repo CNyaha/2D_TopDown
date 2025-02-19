@@ -37,4 +37,10 @@ public class PlayerController : BaseController
         isAttacking = Input.GetMouseButton(0);
     }
 
+    public override void Death()
+    {
+        base.Death();
+        gameManager.GameOver();
+    }
+
 }
