@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6507118683608628272}
   - component: {fileID: 342921282891582185}
   m_Layer: 0
-  m_Name: P_Bow_EquipWeapon
+  m_Name: E_SlowStaff_EquipWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,25 +46,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0dd56b69234c640a4494589b7dff00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.5
-  weaponSize: 0.7
-  power: 5
-  speed: 10
+  delay: 3
+  weaponSize: 0.6
+  power: 2
+  speed: 1
   attackRange: 10
   target:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 64
   isOnKnockback: 1
-  knockbackPower: 0.1
-  knockbackTime: 0.5
+  knockbackPower: 3
+  knockbackTime: 0.1
   projectileSpawnPosition: {fileID: 1626439657726806510}
-  bulletIndex: 0
-  bulletSize: 0.7
+  bulletIndex: 1
+  bulletSize: 1
   duration: 10
   spread: 1
-  numberoProjectilesPerShot: 3
-  multipleProjectileAngle: 3
-  projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  numberoProjectilesPerShot: 1
+  multipleProjectileAngle: 1
+  projectileColor: {r: 0.43040225, g: 0.9811321, b: 0.43204463, a: 1}
 --- !u!1 &3547708264548203253
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 120
-  m_Sprite: {fileID: 21300000, guid: 34796cd8ff2132945be7a1c76b973546, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f04284ab460a6f499bd9d97725daf9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
