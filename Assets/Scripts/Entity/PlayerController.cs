@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class PlayerController : BaseController
 {
     private Camera camera;
+    private GameManager gameManager;
 
-    protected override void Start()
+    public void Init(GameManager gameManager)
     {
-        base.Start();
+        this.gameManager = gameManager;
         camera = Camera.main;
     }
+    
 
     protected override void HandleAction()
     {
