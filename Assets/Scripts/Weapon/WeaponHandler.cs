@@ -40,6 +40,8 @@ public class WeaponHandler : MonoBehaviour
     private Animator animator;
     private SpriteRenderer weaponRenderer;
 
+    public AudioClip attackSoundClip;
+
     protected virtual void Awake()
     {
         Controller = GetComponentInParent<BaseController>();
@@ -59,6 +61,11 @@ public class WeaponHandler : MonoBehaviour
     public virtual void Attack()
     {
         AttackAnimation();
+
+        if (attackSoundClip != null)
+        {
+            SoundManager.PlayClip(attackSoundClip);
+        }
     }
 
     public void AttackAnimation()

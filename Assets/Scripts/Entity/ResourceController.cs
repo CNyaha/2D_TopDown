@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -15,6 +16,10 @@ public class ResourceController : MonoBehaviour
 
     public float CurrentHealth { get; private set; }
     public float MaxHealth => statHandler.Health;
+
+    public AudioClip damageClip;
+
+    private Action<float, float> OnChangeHealth;
 
     private void Awake()
     {
@@ -54,9 +59,16 @@ public class ResourceController : MonoBehaviour
         CurrentHealth = CurrentHealth > MaxHealth ? MaxHealth : CurrentHealth;
         CurrentHealth = CurrentHealth < 0 ? 0 : CurrentHealth;
 
+        OnChangeHealth?.Invoke(CurrentHealth, MaxHealth);
+
         if (change < 0)
         {
             animationHandler.Damage();
+
+            if (damageClip != null)
+            {
+                SoundManager.PlayClip(damageClip);
+            }
         }
 
         if (CurrentHealth <= 0f)
@@ -72,6 +84,16 @@ public class ResourceController : MonoBehaviour
     {
         baseController.Death();
         
+    }
+
+    public void AddHealthChangeEvent(Action<float, float> action)
+    {
+        OnChangeHealth += action;
+    }
+
+    public void RemoveHealthChangeEvent(Action<float, float> action)
+    {
+        OnChangeHealth -= action;
     }
 
 }

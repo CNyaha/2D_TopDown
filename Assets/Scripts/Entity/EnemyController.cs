@@ -38,6 +38,8 @@ public class EnemyController : BaseController
         float distance = DistanceToTarget();
         Vector2 diretion = DirectionToTarget();
 
+        isAttacking = false;
+
         if (distance <= followRange)
         {
             lookDirection = diretion;
